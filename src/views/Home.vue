@@ -1,8 +1,5 @@
 <template>
   <section>
-    <div>
-      Principal {{ loggedIn }}
-    </div>
     <b-carousel
       id="carousel-1"
       :interval="3000"
@@ -21,41 +18,40 @@
       >
       </b-carousel-slide>
     </b-carousel>
-    <div v-for="planta in plantas" :key="planta.id">
-      <div class="titlepl">{{ planta.tipo_planta }}</div>
-      <b-container class="bv-example-row">
-        <b-row>
-          <b-col>
-            <b-card
-              img-src="https://http2.mlstatic.com/D_NQ_NP_963647-MLB48382302651_112021-W.webp"
-              img-alt="Image"
-              img-top
-              tag="article"
-              style="height: 550px"
-              class="titlep mb-2"
+    <b-container class="bv-example-row">
+      <b-row>
+        <b-col>
+          <b-card
+            img-src="https://http2.mlstatic.com/D_NQ_NP_963647-MLB48382302651_112021-W.webp"
+            img-alt="Image"
+            img-top
+            tag="article"
+            style="height: 550px"
+            class="titlep mb-2"
+            v-for="planta in plantas"
+            :key="planta.id"
+          >
+            <hr class="hrH" />
+            <div class="titulo5">{{ planta.nome }}</div>
+            <b-card-text class="textop"> {{ planta.preco }} </b-card-text>
+            <b-button class="btn1" href="/produto" variant="primary"
+              >Adicionar ao Carrinho</b-button
             >
-              <hr class="hrH" />
-              <div class="titulo5">{{ planta.nome }}</div>
-              <b-card-text class="textop"> {{ planta.preco }} </b-card-text>
-              <b-button class="btn1" href="/produto" variant="primary"
-                >Adicionar ao Carrinho</b-button
-              >
-            </b-card>
-          </b-col>
-        </b-row>
-      </b-container>
-    </div>
+          </b-card>
+        </b-col>
+      </b-row>
+    </b-container>
   </section>
 </template>
 
 <script>
 // import axios from "axios";
-import { mapState } from 'vuex' ;
+import { mapState } from "vuex";
 
 export default {
   name: "Planta",
-  computed:{
-    ...mapState('auth', ['loggedIn'])
+  computed: {
+    ...mapState("auth", ["loggedIn"]),
   },
   data() {
     return {
@@ -74,9 +70,15 @@ export default {
 };
 </script>
 
-
-
 <style>
+.col {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.container {
+  padding-top: 50px;
+}
 a.btn.btn1.btn-primary {
   background: #15d5a5;
   background: linear-gradient(7deg, #1d583b 0%, #41a17b 66%);
@@ -98,8 +100,8 @@ a.btn.btn1.btn-primary:hover {
   height: 300px;
 }
 .card {
-  height: 400px;
-  width: 400px;
+  height: 300px;
+  width: 300px;
 }
 
 .card-img-top {
@@ -115,6 +117,10 @@ a.btn.btn1.btn-primary:hover {
 .card-text {
   font-family: "Jomolhari", serif;
   font-size: 22px;
+}
+.cartplanta {
+  display: flex;
+  flex-direction: column;
 }
 .titlepl {
   margin: 5% 0 0 20%;
