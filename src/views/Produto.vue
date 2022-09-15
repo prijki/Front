@@ -141,9 +141,11 @@ export default {
 .col1 {
   border-radius: 4px;
   padding: 1px;
+  display: grid;
 }
 .col2 {
   border-radius: 4px;
+  display: grid;
 }
 .nome {
   margin: 15% 0 0 0;
@@ -322,7 +324,7 @@ img {
   .row {
     border: 0;
     width: 350px;
-    height:100vh;
+    height:90vh;
     margin: 4% 5%;
     flex-direction: column;
   }
@@ -330,21 +332,23 @@ img {
     padding: 1%;
   }
   .col1 {
-    width: 395px;
+    width: 360px;
     box-shadow: none;
     border-style: solid none solid none;
     border-color: #0f3406;
     margin: 0%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     
   }
   .navpr {
     box-shadow: none;
   }
   img {
-    width: 345px;
-    height: 345px;
+    width: 300px;
+    height: 300px;
+    margin-left: 7%;
   }
   .col2 {
     width: 390px;
@@ -384,7 +388,7 @@ img {
   .Comentarios{
     border: 0;
     width: 350px;
-    height:100vh;
+    height:150vh;
     margin: 4% 5%;
     flex-direction: column;
   }
@@ -392,16 +396,42 @@ img {
     text-align: center;
   }
   .FazerComentario{
-    width: 350px;
-    height: 200px;
-    display: flex;
+    display: grid;
+    width: 390px;
+    justify-content: flex-start;
+  }
+  .TextoComentario{
+    width: 250px;
   }
   #textarea{
-    width: 270px;
+    resize: none;
   }
+  .b-avatar{
+    width:50px;
+    height: 1rem;
+  }
+  .Respostas{
+    height: 300px;
+  }
+  .aResposta{
+    display: grid;
+    font-size: 10px;
+  }
+  .Respostas2{
+    display: grid;
+  }
+  .RespostasCliente{
+    width: 400px;
+    height: 90px;
+  }
+
+
+
+
   .BotaoComentario{
     width: 80px;
     height: 40px;
   }
 }
 </style>
+
