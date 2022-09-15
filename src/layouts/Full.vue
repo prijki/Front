@@ -235,5 +235,14 @@ ul.dropdown-menu.show {
     width: 150px;
     padding: 5%;
   }
+  .navbar-toggler {
+
+    padding: 0.25rem 0.75rem;
+    font-size: 1.25rem;
+    line-height: 1;
+    background-color: #47ac5b;
+    border: 1px solid transparent;
+
+}
 }
 </style>
