@@ -121,8 +121,8 @@ export default {
   background-color: white;
   border-radius: 8px;
   padding: 60px;
-  margin: 0% 40% 0 110%;
-  width: 530px;
+  margin: 0% -85% 0 100%;
+  width: 560px;
   height: 600px;
   align-items: center;
   box-shadow: 0px 4px 10px 10px rgba(15, 52, 6, 0.42);
@@ -152,19 +152,19 @@ body {
   color: #086a52;
 }
 .btncad {
-  background: -webkit-(
-    to top,
-    #086a63,
-    #086a52
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: #086a52; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  border: 0;
-  padding: 10px;
-  margin: 10% 0 0 35%;
-  width: 120px;
-  font-size: 20px;
-  border-radius: 4px;
-  font-family: "Roboto", sans-serif;
+  background: -webkit-(to top,
+        #086a63,
+        #086a52);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: #086a52;
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border: 0;
+    padding: 10px;
+    width: 130px;
+    font-size: 21px;
+    border-radius: 4px;
+    margin: 10% 0 0 30%;
+    font-family: "Roboto", sans-serif;
 }
 .btncad:hover {
   background-color: #024435;
@@ -246,64 +246,74 @@ a:hover {
 }
 
 @media (max-width: 844px) {
+  body {
+    background-color: #001510;
+    line-height: 1.4;
+  }
 
-body{
-  background-color: #001510;
-}
-.cform {
-  width: 340px;
-  margin: 0% 0% 0 0;
-  padding: 59px;
-}
-.form-control {
-  margin: 3% 5% 0 0%;
-  padding: 1px;
-}
+  .cform {
+    width: 340px;
+    margin: -4% 0% 0 0;
+    padding: 59px;
+    height: 580px;
+  }
 
-.titulo {
-  margin: 15% 0 0 20%;
-}
-.row {
-  margin: 0% 20% 0% 2%;
-}
-.container-fluid {
-  width: 100%;
-  padding-right: 0;
-  padding-left: 0;
-  margin-right: 0;
-  margin-left: 0;
-}
-.buttons {
-  display: flex;
-  margin: 5% 25% 0 0;
-}
-.btncad {
-  padding: 10px;
-  height: 50px;
-  width: 110px;
-}
-.logo img {
+  .form-control {
+    margin: 3% 5% 0 0%;
+    padding: 1px;
+  }
+
+  .titulo {
+    margin: 15% 0 0 20%;
+  }
+
+  .row {
+    margin: -7% 20% 6% 2%;
+  }
+
+  .container-fluid {
+    width: 100%;
+    padding-right: 0;
+    padding-left: 0;
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  .buttons {
+    display: flex;
+    margin: 15% 13% 0 0;
+  }
+
+  .btncad {
+    background: -webkit-(to top, #086a63, #086a52);
+    background: #086a52;
+    border: 0;
+    padding: 10px;
+    width: 130px;
+    font-size: 21px;
+    border-radius: 4px;
+    margin: 0% 0 0 23%;
+    font-family: "Roboto", sans-serif;
+  }
+
+  .logo img {
     width: 200px;
     height: 200px;
+    margin: 25px 0 0 0;
   }
-  .logo{
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .col {
-    padding: 10px;
-    margin: 0 2% 0 0;
-  }
- 
-.login-page {
-  font-family: Jomolhari;
-  height: 129vh;
-  display: flex;
-  padding: 0;
-  margin: 0 10% 0 0;
-}
 
+  .logo {
+    align-items: center;
+  }
+
+  .col {
+    padding: 17px;
+    margin: 0 33% 0 0;
+    justify-content: space-around;
+  }
+
+  .login-page{
+    height: 100vh;
+  }
 }
 </style>
