@@ -266,7 +266,7 @@ input:-internal-autofill-selected {
     align-items: center;
   }
   .col {
-    padding: 10px;
+    padding: 17px;
     margin: 0 20% 0 0;
   }
 }

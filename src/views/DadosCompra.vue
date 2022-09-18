@@ -141,6 +141,8 @@ body {
   background-color: rgba(255, 255, 255, 0.95);
 }
 
+
+
 .row {
   margin-top: 4rem;
 }
@@ -199,9 +201,13 @@ body {
   border-color: rgba(62, 150, 97, 0.95);
   width: 400px;
 }
-
+.col1{
+  margin: 3% 0 0 0;
+  display: grid;
+}
 .col2 {
   margin: 0 0 0 20%;
+  display: grid;
 }
 .imagens {
   padding: 10px;
