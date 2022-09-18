@@ -10,21 +10,61 @@
         <b-col>
           <b-form class="cform" @submit.prevent="login" v-if="show">
             <div class="dlogin">PJG Plantas</div>
-            <div class="emsen">Email:</div>
+            <div class="emsen">Prmeiro None:</div>
             <b-form-group id="input-group-1">
               <b-form-input
-                v-model="form.email"
-                type="email"
+                v-model="form.first_name"
+                type="text"
                 style="
                   background: white;
                   border-style: none none solid none;
                   border-color: rgba(62, 150, 97, 0.95);
                 "
-                placeholder="Insira seu email"
+                placeholder="Insira seu primeiro nome"
               >
               </b-form-input>
             </b-form-group>
-            <div class="emsen">Senha:</div>
+            <div class="emsen">Sobrenome:</div>
+            <b-form-group id="input-group-1">
+              <b-form-input
+                type="text"
+                v-model="form.last_name"
+                required
+                style="
+                  background: white;
+                  border-style: none none solid none;
+                  border-color: rgba(62, 150, 97, 0.95);
+                "
+                placeholder="Insira sua senha"
+              ></b-form-input>
+            </b-form-group>
+            <div class="emsen" style="white-space: nowrap">Email:</div>
+            <b-form-input
+              type="email"
+              v-model="form.email"
+              required
+              style="
+                background: white;
+                border-style: none none solid none;
+                border-color: rgba(62, 150, 97, 0.95);
+              "
+              placeholder="Insira seu email"
+            ></b-form-input>
+            <div class="emsen" style="white-space: nowrap">Usuario:</div>
+            <b-form-group id="input-group-1">
+              <b-form-input
+                type="text"
+                v-model="form.username"
+                required
+                style="
+                  background: white;
+                  border-style: none none solid none;
+                  border-color: rgba(62, 150, 97, 0.95);
+                "
+                placeholder="Insira sua senha"
+              ></b-form-input>
+            </b-form-group>
+            <div class="emsen" style="white-space: nowrap">Senha:</div>
             <b-form-group id="input-group-1">
               <b-form-input
                 type="password"
@@ -39,33 +79,28 @@
               ></b-form-input>
             </b-form-group>
             <div class="emsen" style="white-space: nowrap">
-              Confirmar senha:
+              Confirmar Senha:
             </div>
-            <b-form-input
-              type="password"
-              v-model="form.password"
-              required
-              style="
-                background: white;
-                border-style: none none solid none;
-                border-color: rgba(62, 150, 97, 0.95);
-              "
-              placeholder="Insira sua senha novamente"
-            ></b-form-input>
-            <b-form-checkbox
-              id="checkbox-1"
-              v-model="status"
-              name="checkbox-1"
-              value="accepted"
-              unchecked-value="not_accepted"
-            >
-              Aceitar os termos de uso
-            </b-form-checkbox>
+            <b-form-group id="input-group-1">
+              <b-form-input
+                type="password"
+                v-model="form.password_confirmation"
+                required
+                style="
+                  background: white;
+                  border-style: none none solid none;
+                  border-color: rgba(62, 150, 97, 0.95);
+                "
+                placeholder="Insira sua senha"
+              ></b-form-input>
+            </b-form-group>
             <div class="Ircad">
               <a href="/login"> Já tem uma conta? Logue aqui </a>
             </div>
             <div class="buttons">
-              <b-button class="btncad" type="submit">Cadastrar</b-button>
+              <b-button class="btncad" type="submit" @click.prevent="register"
+                >Cadastrar</b-button
+              >
             </div>
           </b-form>
         </b-col>
@@ -81,21 +116,18 @@ export default {
       form: {
         email: "",
         password: "",
+        usuario: {},
       },
       show: true,
     };
   },
+  async created() {
+    this.getUsuario();
+  },
   methods: {
-    login() {
-      if (
-        this.form.email === "admin@admin.com" &&
-        this.form.password === "admin"
-      ) {
-        alert("ok");
-        this.$router.push("/");
-      } else {
-        alert("Email ou senha incorretos");
-      }
+    async getUsuario() {
+      this.usuario = await this.$get("auth/");
+      this.$router.push({ name: "Login" });
     },
   },
 };
@@ -121,9 +153,7 @@ export default {
   background-color: white;
   border-radius: 8px;
   padding: 60px;
-  margin: 0% 40% 0 110%;
-  width: 530px;
-  height: 600px;
+  margin: 0% 0% 0 0%;
   align-items: center;
   box-shadow: 0px 4px 10px 10px rgba(15, 52, 6, 0.42);
 }
@@ -246,47 +276,46 @@ a:hover {
 }
 
 @media (max-width: 844px) {
+  body {
+    background-color: #001510;
+  }
+  .cform {
+    width: 340px;
+    margin: 0% 0% 0 0;
+    padding: 59px;
+  }
+  .form-control {
+    margin: 3% 5% 0 0%;
+    padding: 1px;
+  }
 
-body{
-  background-color: #001510;
-}
-.cform {
-  width: 340px;
-  margin: 0% 0% 0 0;
-  padding: 59px;
-}
-.form-control {
-  margin: 3% 5% 0 0%;
-  padding: 1px;
-}
-
-.titulo {
-  margin: 15% 0 0 20%;
-}
-.row {
-  margin: 0% 20% 0% 2%;
-}
-.container-fluid {
-  width: 100%;
-  padding-right: 0;
-  padding-left: 0;
-  margin-right: 0;
-  margin-left: 0;
-}
-.buttons {
-  display: flex;
-  margin: 5% 25% 0 0;
-}
-.btncad {
-  padding: 10px;
-  height: 50px;
-  width: 110px;
-}
-.logo img {
+  .titulo {
+    margin: 15% 0 0 20%;
+  }
+  .row {
+    margin: 0% 20% 0% 2%;
+  }
+  .container-fluid {
+    width: 100%;
+    padding-right: 0;
+    padding-left: 0;
+    margin-right: 0;
+    margin-left: 0;
+  }
+  .buttons {
+    display: flex;
+    margin: 5% 25% 0 0;
+  }
+  .btncad {
+    padding: 10px;
+    height: 50px;
+    width: 110px;
+  }
+  .logo img {
     width: 200px;
     height: 200px;
   }
-  .logo{
+  .logo {
     margin: 0;
     display: flex;
     align-items: center;
@@ -296,14 +325,13 @@ body{
     padding: 10px;
     margin: 0 2% 0 0;
   }
- 
-.login-page {
-  font-family: Jomolhari;
-  height: 129vh;
-  display: flex;
-  padding: 0;
-  margin: 0 10% 0 0;
-}
 
+  .login-page {
+    font-family: Jomolhari;
+    height: 129vh;
+    display: flex;
+    padding: 0;
+    margin: 0 10% 0 0;
+  }
 }
 </style>

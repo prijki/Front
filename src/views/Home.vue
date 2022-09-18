@@ -73,8 +73,9 @@ export default {
 <style>
 .col {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 .container {
   padding-top: 50px;
@@ -102,6 +103,9 @@ a.btn.btn1.btn-primary:hover {
 .card {
   height: 300px;
   width: 300px;
+  margin-left: 25px;
+  margin-right: 25px;
+  margin: 25px;
 }
 
 .card-img-top {
