@@ -213,8 +213,8 @@ body {
   border: 0;
 }
 .subTitle {
-  padding: 8px;
-  margin: 10% 0 0 0;
+  padding: 0px;
+  margin: 15% 0 0 0;
   font-size: 18px;
 }
 
@@ -290,9 +290,10 @@ a:hover {
     background-color: #001510;
   }
   .formCadastro {
-    width: 340px;
-    margin: 0% 0% 0 0;
-    padding: 59px;
+    width: 336px;
+    height: 92vh;
+    margin: -32% -8% 0 -3px;
+    padding: 50px;
   }
   .form-control {
     margin: 3% 5% 0 0%;
@@ -324,6 +325,7 @@ a:hover {
   .logo img {
     width: 200px;
     height: 200px;
+    margin: -3% 0% 5vh 3vh;
   }
   .logo {
     margin: 0;
@@ -342,6 +344,13 @@ a:hover {
     display: flex;
     padding: 0;
     margin: 0 10% 0 0;
+  }
+
+  .Pjg{
+  font-size: 35px;
+  line-height: 29px;
+  text-align: center;
+  color: #086a52;
   }
 }
 </style>
