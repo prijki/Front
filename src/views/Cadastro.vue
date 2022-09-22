@@ -282,7 +282,7 @@ a:hover {
   body {
     background-color: #001510;
   }
-  .cform {
+  .formCadastro {
     width: 340px;
     margin: 0% 0% 0 0;
     padding: 59px;
@@ -309,7 +309,7 @@ a:hover {
     display: flex;
     margin: 5% 25% 0 0;
   }
-  .btncad {
+  .btnCadastro {
     padding: 10px;
     height: 50px;
     width: 110px;
@@ -329,7 +329,7 @@ a:hover {
     margin: 0 2% 0 0;
   }
 
-  .login-page {
+  .loginPage {
     font-family: Jomolhari;
     height: 129vh;
     display: flex;
