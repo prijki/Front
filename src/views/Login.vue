@@ -10,7 +10,7 @@
         <b-col>
           <b-form class="cform" v-if="show"
             ><div class="dlogin">PJG Plantas</div>
-            <div class="emsen">Email:</div>
+            <div class="emsen">Username:</div>
             <b-form-group id="input-group-1">
               <b-form-input
                 v-model="usuario.username"
@@ -20,7 +20,7 @@
                   border-style: none none solid none;
                   border-color: rgba(62, 150, 97, 0.95);
                 "
-                placeholder="Insira seu email"
+                placeholder="Insira seu username"
               >
               </b-form-input>
             </b-form-group>
@@ -44,7 +44,12 @@
               <a href="/cadastro"> Não tem conta? Crie a sua aqui </a>
             </div>
             <div class="buttons">
-              <b-button class="btncad" type="submit" @click.prevent="submitLogin">Logar</b-button>
+              <b-button
+                class="btncad"
+                type="submit"
+                @click.prevent="submitLogin"
+                >Logar</b-button
+              >
               <b-button class="btncad2">Administrar</b-button>
             </div>
           </b-form>
@@ -81,11 +86,11 @@ export default {
     //     alert("Email ou senha incorretos");
     //   }
     // },
-    ...mapActions('auth', ['login']),
-    submitLogin(){
-      this.login(this.usuario)
-      this.$router.push({ name: 'Home'})
-    }
+    ...mapActions("auth", ["login"]),
+    submitLogin() {
+      this.login(this.usuario);
+      this.$router.push({ name: "Home" });
+    },
   },
 };
 </script>

@@ -1,6 +1,6 @@
 <template>
   <body>
-    <b-container class="login-page">
+    <b-container class="loginPage">
       <b-row align-v="center">
         <b-col class="log"
           ><div class="logo">
@@ -8,8 +8,8 @@
           </div>
         </b-col>
         <b-col>
-          <b-form class="cform" @submit.prevent="login" v-if="show">
-            <div class="dlogin">PJG Plantas</div>
+          <b-form class="formCadastro" @submit.prevent="login" v-if="show">
+            <div class="Pjg">PJG Plantas</div>
             <div class="emsen">Prmeiro None:</div>
             <b-form-group id="input-group-1">
               <b-form-input
@@ -24,7 +24,7 @@
               >
               </b-form-input>
             </b-form-group>
-            <div class="emsen">Sobrenome:</div>
+            <div class="subTitle">Sobrenome:</div>
             <b-form-group id="input-group-1">
               <b-form-input
                 type="text"
@@ -98,7 +98,10 @@
               <a href="/login"> Já tem uma conta? Logue aqui </a>
             </div>
             <div class="buttons">
-              <b-button class="btncad" type="submit" @click.prevent="register"
+              <b-button
+                class="btnCadastro"
+                type="submit"
+                @click.prevent="register"
                 >Cadastrar</b-button
               >
             </div>
@@ -142,14 +145,14 @@ export default {
 .logo {
   margin: 5% 0% 0% 55%;
 }
-.login-page {
+.loginPage {
   font-family: Jomolhari;
   height: 100vh;
   display: flex;
   padding: 0;
   margin: 0 10% 0 0;
 }
-.cform {
+.formCadastro {
   background-color: white;
   border-radius: 8px;
   padding: 60px;
@@ -173,7 +176,7 @@ body {
     #00bf8f
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
-.dlogin {
+.Pjg {
   font-size: 40px;
   line-height: 29px;
   text-align: center;
@@ -181,7 +184,7 @@ body {
   margin: 2% 0 0 0;
   color: #086a52;
 }
-.btncad {
+.btnCadastro {
   background: -webkit-(
     to top,
     #086a63,
@@ -196,13 +199,13 @@ body {
   border-radius: 4px;
   font-family: "Roboto", sans-serif;
 }
-.btncad:hover {
+.btnCadastro:hover {
   background-color: #024435;
 }
-.btncad::after {
+.btnCadastro::after {
   border: 0;
 }
-.emsen {
+.subTitle {
   padding: 8px;
   font-size: 20px;
   margin: 5% 0 0 0;
