@@ -10,7 +10,7 @@
         <b-col>
           <b-form class="formCadastro" @submit.prevent="login" v-if="show">
             <div class="Pjg">PJG Plantas</div>
-            <div class="emsen">Prmeiro None:</div>
+            <div class="subTitle">Prmeiro Nome:</div>
             <b-form-group id="input-group-1">
               <b-form-input
                 v-model="form.first_name"
@@ -24,7 +24,7 @@
               >
               </b-form-input>
             </b-form-group>
-            <div class="subTitle">Sobrenome:</div>
+            <div class="emsen">Sobrenome:</div>
             <b-form-group id="input-group-1">
               <b-form-input
                 type="text"
@@ -140,7 +140,7 @@ export default {
 .logo img {
   width: 400px;
   height: 400px;
-  margin: 3% 0% 0 0;
+  margin: 3% 0% 12vh 22vh;
 }
 .logo {
   margin: 5% 0% 0% 55%;
@@ -155,8 +155,10 @@ export default {
 .formCadastro {
   background-color: white;
   border-radius: 8px;
-  padding: 60px;
-  margin: 0% 0% 0 0%;
+  margin: -1% -167% 0 0%;  
+  padding: 50px;
+  width: 500px;
+  height: 86vh;
   align-items: center;
   box-shadow: 0px 4px 10px 10px rgba(15, 52, 6, 0.42);
 }
@@ -181,7 +183,7 @@ body {
   line-height: 29px;
   text-align: center;
   font-weight: 500;
-  margin: 2% 0 0 0;
+  margin: -2% 0 0 0;
   color: #086a52;
 }
 .btnCadastro {
@@ -202,13 +204,18 @@ body {
 .btnCadastro:hover {
   background-color: #024435;
 }
+.emsen {
+  padding: 0px;
+  margin: 6% 0 0 0;
+  font-size: 18px;
+}
 .btnCadastro::after {
   border: 0;
 }
 .subTitle {
   padding: 8px;
-  font-size: 20px;
-  margin: 5% 0 0 0;
+  margin: 10% 0 0 0;
+  font-size: 18px;
 }
 
 #div-diagonal {
