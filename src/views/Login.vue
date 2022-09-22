@@ -177,8 +177,8 @@ a:hover {
   background-color: #024435;
 }
 .emsen {
-  padding: 8px;
-  margin: 10% 0 0 0;
+  padding: 0px;
+  margin: 15% 0 0 0;
   font-size: 20px;
 }
 .btncad2 {
@@ -229,7 +229,7 @@ input:-internal-autofill-selected {
   }
   .cform {
     width: 340px;
-    margin: 0% 0% 0 15px;
+    margin: -7% 0% 0 15px;
   }
   .form-control {
     margin: 3% 5% 0 0%;
