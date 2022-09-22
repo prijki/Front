@@ -104,7 +104,7 @@ export default {
 }
 
 .logo {
-  margin: 20% 0 0 30%;
+  margin: 21% 74px 0 30%;
 }
 
 .login-page {
