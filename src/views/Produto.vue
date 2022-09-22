@@ -49,8 +49,8 @@
             class="TextoComentario"
             id="textarea-formatter"
             max-rows="5"
-            style="height: 140px"
             no-resize
+            style="height:auto!important"
           >
           </b-form-textarea>
           <b-button class="BotaoComentario" type="submit">Comentar</b-button>
@@ -324,7 +324,7 @@ img {
   .row {
     border: 0;
     width: 350px;
-    height:90vh;
+    height:120vh;
     margin: 4% 5%;
     flex-direction: column;
   }
@@ -340,6 +340,7 @@ img {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    flex-grow: 1;
     
   }
   .navpr {
@@ -357,12 +358,17 @@ img {
     margin: 0;
     padding: 0;
     margin: 0%;
+    flex-grow: 2;
   }
   .dprincipal {
     width: 390px;
   }
   .nome {
     text-align: center;
+    font-size: 30px;
+  }
+  .descricao{
+    font-size: 20px;
   }
   .btncad {
     margin: 9% 0 0 35%;
@@ -394,14 +400,17 @@ img {
   }
   .TituloComentario{
     text-align: center;
+    font-size: 30px;
   }
   .FazerComentario{
     display: grid;
     width: 390px;
     justify-content: flex-start;
+    flex-grow: 1;
   }
   .TextoComentario{
     width: 250px;
+    height: 40px;
   }
   #textarea{
     resize: none;
@@ -412,6 +421,7 @@ img {
   }
   .Respostas{
     height: 300px;
+    flex-grow: 1;
   }
   .aResposta{
     display: grid;
@@ -419,6 +429,7 @@ img {
   }
   .Respostas2{
     display: grid;
+    flex-grow: 2;
   }
   .RespostasCliente{
     width: 400px;
