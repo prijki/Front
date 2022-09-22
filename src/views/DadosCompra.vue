@@ -7,6 +7,7 @@
         alt=""
         width="250px"
         height="250px"
+        class="imgplanta"
       />
       <br />
       <div class="NomePDT">
@@ -282,19 +283,47 @@ ul.dropdown-menu.show {
 
 @media (max-width: 844px) {
   .col1 {
-    margin: 0 0 0 4%;
+    flex-grow: 1;
+    width: 280px;
   }
   .col2 {
     margin: 0 10% 0 5%;
+    flex-grow: 2;
+  }
+  .row{
+    margin-top: 0px;
   }
   .subtitle {
     text-align: center;
+    margin:0%;
+  }
+  .subsubtitle{
+    width: 280px;
   }
   .button {
     margin: 2% 0 10% 30%;
   }
   .imagens {
     margin-bottom: 10%;
+  }
+  .pdt{
+    flex-direction: column;
+    align-items: center;
+    width: 280px;
+    align-content: center;
+    margin: 3% 0 0 11.5%;
+  }
+  .imgplanta{
+    margin: 10px;
+  }
+  .container{
+    padding: 10px;
+  }
+  .form-control{
+    width: 340px;
+  }
+  .btn-group{
+    padding:5px ;
   }
   #footer {
     margin: 0 0 0 5%;
@@ -308,5 +337,6 @@ ul.dropdown-menu.show {
     margin: 0 20% 0 0;
     text-align: center;
   }
+  
 }
 </style>
