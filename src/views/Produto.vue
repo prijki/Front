@@ -50,7 +50,6 @@
             id="textarea-formatter"
             max-rows="5"
             no-resize
-            style="height:auto!important"
           >
           </b-form-textarea>
           <b-button class="BotaoComentario" type="submit">Comentar</b-button>
@@ -404,17 +403,18 @@ img {
   }
   .FazerComentario{
     display: grid;
-    width: 390px;
+    width: 367px;
     justify-content: flex-start;
     flex-grow: 1;
   }
   .TextoComentario{
     width: 250px;
-    height: 40px;
+    height: 20px;
   }
   #textarea{
     resize: none;
   }
+  
   .b-avatar{
     width:50px;
     height: 1rem;
