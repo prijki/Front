@@ -124,14 +124,21 @@ export default {
       show: true,
     };
   },
-  async created() {
-    this.getUsuario();
-  },
+  // async created() {
+  //   this.getUsuario();
+  // },
   methods: {
-    async getUsuario() {
-      this.usuario = await this.$get("auth/");
-      this.$router.push({ name: "Login" });
+    async register() {
+      try {
+        await this.$post("auth/", this.form);
+        this.$router.push({ name: "Login" });
+      } catch {
+        alert("Erro");
+      }
     },
+    //   async getUsuario() {
+    //     this.usuario = await this.$get("auth/");
+    //   },
   },
 };
 </script>
@@ -155,7 +162,7 @@ export default {
 .formCadastro {
   background-color: white;
   border-radius: 8px;
-  margin: -1% -167% 0 0%;  
+  margin: -1% -167% 0 0%;
   padding: 50px;
   width: 500px;
   height: 86vh;
@@ -346,11 +353,11 @@ a:hover {
     margin: 0 10% 0 0;
   }
 
-  .Pjg{
-  font-size: 35px;
-  line-height: 29px;
-  text-align: center;
-  color: #086a52;
+  .Pjg {
+    font-size: 35px;
+    line-height: 29px;
+    text-align: center;
+    color: #086a52;
   }
 }
 </style>

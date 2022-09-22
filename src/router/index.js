@@ -59,6 +59,9 @@ const routes = [
       {
         path: "/cadastro",
         name: "/cadastro",
+        meta: {
+          auth: false,
+        },
         component: () =>
           import(/* webpackChunkName: "about" */ "../views/Cadastro.vue"),
       },

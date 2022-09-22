@@ -6,9 +6,9 @@
 
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav class="ml-auto">
-            <b-navbar-nav>
-              <b-nav-item href="/">Home</b-nav-item>
-            </b-navbar-nav>
+          <b-navbar-nav>
+            <b-nav-item href="/">Home</b-nav-item>
+          </b-navbar-nav>
           <b-nav-item-dropdown class="drop" text="Produtos" right>
             <b-dropdown-item href="#" class="drop1"
               >Plantas de Áreas Externas</b-dropdown-item
@@ -54,7 +54,8 @@
             </div>
           </b-nav-item-dropdown>
           <b-navbar-nav>
-            <b-nav-item @click="logout">Sair</b-nav-item>
+            <b-nav-item v-if="!loggedIn" @click="logout">Sair</b-nav-item>
+            <b-nav-item v-else>{{ user.username }}</b-nav-item>
           </b-navbar-nav>
         </b-navbar-nav>
       </b-collapse>
@@ -81,15 +82,16 @@
 </template>
 
 <script>
-import { mapActions} from 'vuex';
+import { mapActions, mapState } from "vuex";
 export default {
-  methods:{
-    ...mapActions('auth', ['logout'])
-  }
+  methods: {
+    ...mapActions("auth", ["logout"]),
+  },
+  computed: {
+    ...mapState("auth", ["loggedIn", "user"]),
+  },
 };
-  
 </script>
-
 
 <style lang="scss">
 @import url("https://fonts.googleapis.com/css2?family=Baskervville:ital@1&display=swap");
@@ -236,13 +238,11 @@ ul.dropdown-menu.show {
     padding: 5%;
   }
   .navbar-toggler {
-
     padding: 0.25rem 0.75rem;
     font-size: 1.25rem;
     line-height: 1;
     background-color: #47ac5b;
     border: 1px solid transparent;
-
-}
+  }
 }
 </style>
