@@ -34,7 +34,9 @@
             ></b-form-spinbutton>
           </div>
           <div class="Total">
-            <h3>TOTAL:<code class="value">R${{value*50}},00 </code></h3>
+            <h3>
+              TOTAL:<code class="value">R${{ value * 50 }},00 </code>
+            </h3>
           </div>
           <br />
           <b-button class="btncad" type="submit" href="/dadoscompra"
@@ -54,49 +56,17 @@
           </b-form-textarea>
           <b-button class="BotaoComentario" type="submit">Comentar</b-button>
         </div>
-        <div class="Respostas">
+        <div
+          class="Respostas"
+          v-for="comentario in comentarios"
+          :key="comentario.id"
+        >
           <b-avatar icon="people-fill" size="4em"></b-avatar>
           <div class="RespostasCliente">
             <div class="aResposta">
-              Nulla molestie, arcu eget condimentum hendrerit, turpis nisl
-              consectetur lorem, ut porta velit nulla sit amet erat. Maecenas
-              euismod dolor nec orci bibendum, egestas consequat orci accumsan.
-              Maecenas egestas sed dui ac fermentum. Phasellus vel rhoncus
-              lacus, sit amet facilisis massa.
+              {{ comentario.texto }}
             </div>
           </div>
-          <b-button class="BotaoComentario2" type="submit">Responder</b-button>
-        </div>
-        <div class="aResposta2">Respostas</div>
-        <div class="Respostas2">
-          <b-avatar class="avatar" icon="people-fill" size="3em"></b-avatar>
-          <div class="RespostasCliente2">
-            <div class="aResposta3">
-              Nulla molestie, arcu eget condimentum hendrerit, turpis nisl
-              consectetur lorem, ut porta velit nulla sit amet.
-            </div>
-          </div>
-          <b-icon class="icon" icon="heart-fill" scale="1"></b-icon>
-        </div>
-        <div class="Respostas2">
-          <b-avatar class="avatar" icon="people-fill" size="3em"></b-avatar>
-          <div class="RespostasCliente2">
-            <div class="aResposta3">
-              Nulla molestie, arcu eget condimentum hendrerit, turpis nisl
-              consectetur lorem, ut porta velit nulla sit amet.
-            </div>
-          </div>
-          <b-icon class="icon" icon="heart-fill" scale="1"></b-icon>
-        </div>
-        <div class="Respostas2">
-          <b-avatar class="avatar" icon="people-fill" size="3em"></b-avatar>
-          <div class="RespostasCliente2">
-            <div class="aResposta3">
-              Nulla molestie, arcu eget condimentum hendrerit, turpis nisl
-              consectetur lorem, ut porta velit nulla sit amet.
-            </div>
-          </div>
-          <b-icon class="icon" icon="heart-fill" scale="1"></b-icon>
         </div>
       </div>
     </b-container>
@@ -105,21 +75,29 @@
 
 <script>
 export default {
-  computed:{
-
-  },
+  name: "Comentarios",
   data() {
     return {
       value: 1,
+      comentario: [],
+      comentarios: {},
     };
+  },
+  async created() {
+    this.getComentarios();
+  },
+  methods: {
+    async getComentarios() {
+      this.plantas = await this.$get("comentarios/");
+    },
   },
 };
 </script>
 
 <style>
-.value{
+.value {
   color: #000000;
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-style: initial;
 }
 
@@ -267,45 +245,8 @@ img {
   padding: 25px;
   color: #000000;
 }
-.BotaoComentario2 {
-  width: 150px;
-  height: 50px;
-  background: #efa058;
-  border-radius: 3px;
-  margin: 0% 10% 0 1%;
-  font-size: 1.5rem;
-  font-weight: 500;
-  padding: 5px;
-  border-color: #efa058;
-}
-.BotaoComentario2:hover {
-  background: #ff691e;
-  color: white;
-  border-color: #ff691e;
-}
-.aResposta2 {
-  font-family: "Jomolhari";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 24px;
-  text-align: justify;
-  color: #4d4949;
-  margin: 1% 0 0 11%;
-}
 .avatar {
   margin: 1% 0 0 11%;
-}
-.aResposta3 {
-  font-family: "Jomolhari";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 17px;
-  line-height: 24px;
-  text-align: justify;
-  padding: 25px;
-  color: #000000;
-  margin: 0 0 0 2%;
 }
 .icon {
   margin: 2% 0 0 1%;
@@ -323,11 +264,11 @@ img {
   .row {
     border: 0;
     width: 350px;
-    height:120vh;
+    height: 120vh;
     margin: 4% 5%;
     flex-direction: column;
   }
-  .produto{
+  .produto {
     padding: 1%;
   }
   .col1 {
@@ -340,7 +281,6 @@ img {
     flex-direction: column;
     justify-content: center;
     flex-grow: 1;
-    
   }
   .navpr {
     box-shadow: none;
@@ -366,7 +306,7 @@ img {
     text-align: center;
     font-size: 30px;
   }
-  .descricao{
+  .descricao {
     font-size: 20px;
   }
   .btncad {
@@ -390,59 +330,55 @@ img {
   .container {
     width: 0%;
   }
-  .Comentarios{
+  .Comentarios {
     border: 0;
     width: 350px;
-    height:150vh;
+    height: 150vh;
     margin: 4% 5%;
     flex-direction: column;
   }
-  .TituloComentario{
+  .TituloComentario {
     text-align: center;
     font-size: 30px;
   }
-  .FazerComentario{
+  .FazerComentario {
     display: grid;
     width: 367px;
     justify-content: flex-start;
     flex-grow: 1;
   }
-  .TextoComentario{
+  .TextoComentario {
     width: 250px;
     height: 20px;
   }
-  #textarea{
+  #textarea {
     resize: none;
   }
-  
-  .b-avatar{
-    width:50px;
+
+  .b-avatar {
+    width: 50px;
     height: 1rem;
   }
-  .Respostas{
+  .Respostas {
     height: 300px;
     flex-grow: 1;
   }
-  .aResposta{
+  .aResposta {
     display: grid;
     font-size: 10px;
   }
-  .Respostas2{
+  .Respostas2 {
     display: grid;
     flex-grow: 2;
   }
-  .RespostasCliente{
+  .RespostasCliente {
     width: 400px;
     height: 90px;
   }
 
-
-
-
-  .BotaoComentario{
+  .BotaoComentario {
     width: 80px;
     height: 40px;
   }
 }
 </style>
-
