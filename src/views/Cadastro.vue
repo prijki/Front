@@ -147,7 +147,7 @@ export default {
 .logo img {
   width: 400px;
   height: 400px;
-  margin: 3% 0% 12vh 22vh;
+  margin: 3% 0% 12vh 21vh;
 }
 .logo {
   margin: 5% 0% 0% 55%;
